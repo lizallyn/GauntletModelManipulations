@@ -1,4 +1,4 @@
-ibrary(reshape2)
+library(reshape2)
 library(paletteer)
 library(ggplot2)
 library(patchwork)
@@ -24,7 +24,7 @@ eaten_plot_gaps <- #plotEaten(read.eaten, "Days/Week = (1 - 7)", c(0, 4000), NUL
   # theme(legend.position = "none" ,
   #       text = element_text(family = "Candara")
   # ) +
-  labs(y = "% Run Consumed", x = "Days", title = "Gap Days = (1 - 21)")
+  labs(y = "% Run Consumed", x = "Days", title = "Lapse Length = (1 - 21 Days)")
 eaten_plot_gaps
 
 
@@ -95,6 +95,6 @@ ch1_harvest_effort_comp_plot <- (seals_plot_gaps / seals_plot_effort + plot_layo
   (eaten_plot_gaps / eaten_plot_effort + plot_layout(axis_titles = "collect"))
 ch1_harvest_effort_comp_plot
 # ggsave(filename = "ch1_harvest_effort_comp_plot.png", device = "png",
-#        path = "Paper 1/Plot Outputs",
+#        path = "Plots/Plot Outputs",
 #        width = 8, height = 5, units = "in",
 #       plot = ch1_harvest_effort_comp_plot)
