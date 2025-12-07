@@ -17,9 +17,9 @@ seals_plot_base <- #plotSeals(seals_for_plot_base, "Base", "cividis", c(0, 85))
             linewidth = 0.8) +
   scale_color_paletteer_c("ggthemes::Blue-Teal", direction = -1) +
   ylim(0, 80) +
-  theme_classic(base_size = 12) +
+  theme_classic(base_size = 16) +
   theme(legend.position = "none") +
-  labs(y = "Seals at the Gauntlet", x = "Day", title = "Base")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Base")
 seals_plot_base
 
 read.seals.nofear <- read.csv("Outputs/Reps_NoFear_Run_During_Low_gauntlet_seals_output.csv")
@@ -34,9 +34,9 @@ seals_plot_nofear_during_low <- #plotSeals(seals_for_plot_nofear_during, "No Fea
             linewidth = 0.8) +
   scale_color_paletteer_c("ggthemes::Green", direction = -1) +
   ylim(0, 80) +
-  theme_classic(base_size = 12) +
+  theme_classic(base_size = 16) +
   theme(legend.position = "none") +
-  labs(y = "Seals at the Gauntlet", x = "Day", title = "No Fear")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "No Fear")
 
 read.seals.fear <- read.csv("Outputs/Reps_Fear_Run_During_Low_gauntlet_seals_output.csv")
 read.seals.fear <- read.seals.fear[,-2]
@@ -51,9 +51,9 @@ seals_plot_fear_during_low <- #plotSeals2(read.seals.fear, "Fear", "rocket", c(0
             linewidth = 0.8) +
   scale_color_paletteer_c("ggthemes::Orange", direction = -1) +
   ylim(0, 80) +
-  theme_classic(base_size = 12) +
+  theme_classic(base_size = 16) +
   theme(legend.position = "none") +
-  labs(y = "Seals at the Gauntlet", x = "Day", title = "Fear")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Fear")
 seals_plot_fear_during_low
 
 
@@ -86,7 +86,7 @@ eaten_all_long$Eaten <- eaten_all_long$Eaten / 10000 * 100
 ch1_scenario_eaten_comp_boxplot <- ggplot(data = eaten_all_long) +
   geom_boxplot(aes(x = Scenario, y = Eaten), 
                fill = c("#63B1C1","#6DB562", "#F6AC50")) + 
-  theme_classic(base_size = 12) +
+  theme_classic(base_size = 16) +
   labs(y = "% Run Consumed", x = "Management Scenario")
 ch1_scenario_eaten_comp_boxplot
 # ggsave(filename = "ch1_scenario_eaten_comp_boxplot.png", device = "png",
@@ -101,4 +101,47 @@ ch1_harvest_seals_and_salmon_comp_plot
 #        path = "Paper 1/Plot Outputs",
 #        width = 8, height = 6, units = "in",
 #       plot = ch1_harvest_seals_and_salmon_comp_plot)
+
+
+
+## Box and Whisker - Seals Killed
+read.killed <- read.csv("Outputs/Reps_Base_Run_seals_harvested_output.csv")
+read.killed <- data.frame(1:ncol(read.killed[,-1:-2]), as.numeric(colSums(read.killed[,-1:-2], na.rm = T)))
+colnames(read.killed) <- c("Iteration", "Killed")
+killed_base <- read.killed
+
+read.killed <- read.csv("Outputs/Reps_NoFear_Run_During_Low_seals_harvested_output.csv")
+read.killed <- data.frame(1:ncol(read.killed[,-1:-2]), as.numeric(colSums(read.killed[,-1:-2], na.rm = T)))
+colnames(read.killed) <- c("Iteration", "Killed")
+killed_nofear_during_low <- read.killed
+
+read.killed <- read.csv("Outputs/Reps_Fear_Run_During_Low_seals_harvested_output.csv")
+read.killed <- data.frame(1:ncol(read.killed[,-1:-2]), as.numeric(colSums(read.killed[,-1:-2], na.rm = T)))
+colnames(read.killed) <- c("Iteration", "Killed")
+killed_fear_during_low <- read.killed
+
+killed_all <- data.frame(Iteration = killed_base$Iteration, Base = killed_base$Killed,
+                        NoFear = killed_nofear_during_low$Killed, Fear = killed_fear_during_low$Killed)
+killed_all_long <- melt(killed_all, id.vars = colnames(killed_all)[1], variable.name = "Scenario", value.name = "Killed")
+
+ch1_scenario_killed_comp_boxplot <- ggplot(data = killed_all_long) +
+  geom_boxplot(aes(x = Scenario, y = Killed), 
+               fill = c("#63B1C1","#6DB562", "#F6AC50")) + 
+  theme_classic(base_size = 16) +
+  labs(y = "Number of Seals Killed", x = "Management Scenario")
+ch1_scenario_killed_comp_boxplot
+# ggsave(filename = "ch1_scenario_eaten_comp_boxplot.png", device = "png",
+#        path = "ParameterManipulations/Plots",
+#        width = 10, height = 10, units = "in",
+#       plot = ch1_scenario_eaten_comp_boxplot)
+
+ch1_harvest_seals_and_salmon_comp_plot <- (seals_plot_base / seals_plot_nofear_during_low / seals_plot_fear_during_low + 
+                                             plot_layout(axis_titles = "collect")) | ch1_scenario_eaten_comp_boxplot | 
+  ch1_scenario_killed_comp_boxplot
+ch1_harvest_seals_and_salmon_comp_plot
+# ggsave(filename = "ch1_harvest_scenarios_comparison_gauntletseals_salmon_harvestedseals_plot_thesis.png", device = "png",
+#        path = "Plots/Plot Outputs",
+#        width = 10, height = 6, units = "in",
+#       plot = ch1_harvest_seals_and_salmon_comp_plot)
+
 
