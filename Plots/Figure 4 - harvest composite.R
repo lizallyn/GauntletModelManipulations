@@ -19,7 +19,7 @@ seals_plot_base <- #plotSeals(seals_for_plot_base, "Base", "cividis", c(0, 85))
   ylim(0, 80) +
   theme_classic(base_size = 18) +
   theme(legend.position = "none") +
-  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Base")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "None")
 seals_plot_base
 
 read.seals.nofear <- read.csv("Outputs/Reps_NoFear_Run_During_Low_gauntlet_seals_output.csv")
@@ -36,7 +36,7 @@ seals_plot_nofear_during_low <- #plotSeals(seals_for_plot_nofear_during, "No Fea
   ylim(0, 80) +
   theme_classic(base_size = 18) +
   theme(legend.position = "none") +
-  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "No Fear")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Section 120")
 
 read.seals.fear <- read.csv("Outputs/Reps_Fear_Run_During_Low_gauntlet_seals_output.csv")
 read.seals.fear <- read.seals.fear[,-2]
@@ -53,7 +53,7 @@ seals_plot_fear_during_low <- #plotSeals2(read.seals.fear, "Fear", "rocket", c(0
   ylim(0, 80) +
   theme_classic(base_size = 18) +
   theme(legend.position = "none") +
-  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Fear")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Hunting")
 seals_plot_fear_during_low
 
 
@@ -78,8 +78,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Run_During_Low_salmon_eaten_output.csv
 colnames(read.eaten) <- c("Iteration", "Eaten")
 eaten_fear_during_low <- read.eaten
 
-eaten_all <- data.frame(Iteration = eaten_base$Iteration, Base = eaten_base$Eaten,
-                        NoFear = eaten_nofear_during_low$Eaten, Fear = eaten_fear_during_low$Eaten)
+eaten_all <- data.frame(Iteration = eaten_base$Iteration, None = eaten_base$Eaten,
+                        Section120 = eaten_nofear_during_low$Eaten, Hunting = eaten_fear_during_low$Eaten)
 eaten_all_long <- melt(eaten_all, id.vars = colnames(eaten_all)[1], variable.name = "Scenario", value.name = "Eaten")
 eaten_all_long$Eaten <- eaten_all_long$Eaten / 10000 * 100
 
@@ -120,8 +120,8 @@ read.killed <- data.frame(1:ncol(read.killed[,-1:-2]), as.numeric(colSums(read.k
 colnames(read.killed) <- c("Iteration", "Killed")
 killed_fear_during_low <- read.killed
 
-killed_all <- data.frame(Iteration = killed_base$Iteration, Base = killed_base$Killed,
-                        NoFear = killed_nofear_during_low$Killed, Fear = killed_fear_during_low$Killed)
+killed_all <- data.frame(Iteration = killed_base$Iteration, None = killed_base$Killed,
+                        Section120 = killed_nofear_during_low$Killed, Hunting = killed_fear_during_low$Killed)
 killed_all_long <- melt(killed_all, id.vars = colnames(killed_all)[1], variable.name = "Scenario", value.name = "Killed")
 
 ch1_scenario_killed_comp_boxplot <- ggplot(data = killed_all_long) +
@@ -138,8 +138,14 @@ ch1_scenario_killed_comp_boxplot
 ch1_harvest_seals_and_salmon_comp_plot <- (seals_plot_base / seals_plot_nofear_during_low / seals_plot_fear_during_low + 
                                              plot_layout(axis_titles = "collect")) | ch1_scenario_eaten_comp_boxplot | 
   ch1_scenario_killed_comp_boxplot
+
+ch1_harvest_seals_and_salmon_comp_plot <- (seals_plot_base / seals_plot_nofear_during_low / seals_plot_fear_during_low + 
+    plot_layout(axis_titles = "collect")) | (ch1_scenario_eaten_comp_boxplot / 
+  ch1_scenario_killed_comp_boxplot + 
+    plot_layout(axis_titles = "collect"))
+
 ch1_harvest_seals_and_salmon_comp_plot
-# ggsave(filename = "harvest_scenarios_comparison_gauntletseals_salmon_harvestedseals_plot.png", device = "png",
+# ggsave(filename = "harvest_scenarios_comparison_gauntletseals_salmon_harvestedseals_plot2.png", device = "png",
 #        path = "Plots/Plot Outputs",
 #        width = 10, height = 8, units = "in",
 #       plot = ch1_harvest_seals_and_salmon_comp_plot)
