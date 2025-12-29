@@ -17,7 +17,7 @@ seals_plot_base <- #plotSeals(seals_for_plot_base, "Base", "cividis", c(0, 85))
             linewidth = 0.8) +
   scale_color_paletteer_c("ggthemes::Blue-Teal", direction = -1) +
   ylim(0, 80) +
-  theme_classic(base_size = 16) +
+  theme_classic(base_size = 18) +
   theme(legend.position = "none") +
   labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Base")
 seals_plot_base
@@ -34,7 +34,7 @@ seals_plot_nofear_during_low <- #plotSeals(seals_for_plot_nofear_during, "No Fea
             linewidth = 0.8) +
   scale_color_paletteer_c("ggthemes::Green", direction = -1) +
   ylim(0, 80) +
-  theme_classic(base_size = 16) +
+  theme_classic(base_size = 18) +
   theme(legend.position = "none") +
   labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "No Fear")
 
@@ -51,7 +51,7 @@ seals_plot_fear_during_low <- #plotSeals2(read.seals.fear, "Fear", "rocket", c(0
             linewidth = 0.8) +
   scale_color_paletteer_c("ggthemes::Orange", direction = -1) +
   ylim(0, 80) +
-  theme_classic(base_size = 16) +
+  theme_classic(base_size = 18) +
   theme(legend.position = "none") +
   labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Fear")
 seals_plot_fear_during_low
@@ -86,7 +86,7 @@ eaten_all_long$Eaten <- eaten_all_long$Eaten / 10000 * 100
 ch1_scenario_eaten_comp_boxplot <- ggplot(data = eaten_all_long) +
   geom_boxplot(aes(x = Scenario, y = Eaten), 
                fill = c("#63B1C1","#6DB562", "#F6AC50")) + 
-  theme_classic(base_size = 16) +
+  theme_classic(base_size = 18) +
   labs(y = "% Run Consumed", x = "Management Scenario")
 ch1_scenario_eaten_comp_boxplot
 # ggsave(filename = "ch1_scenario_eaten_comp_boxplot.png", device = "png",
@@ -127,7 +127,7 @@ killed_all_long <- melt(killed_all, id.vars = colnames(killed_all)[1], variable.
 ch1_scenario_killed_comp_boxplot <- ggplot(data = killed_all_long) +
   geom_boxplot(aes(x = Scenario, y = Killed), 
                fill = c("#63B1C1","#6DB562", "#F6AC50")) + 
-  theme_classic(base_size = 16) +
+  theme_classic(base_size = 18) +
   labs(y = "Number of Seals Killed", x = "Management Scenario")
 ch1_scenario_killed_comp_boxplot
 # ggsave(filename = "ch1_scenario_eaten_comp_boxplot.png", device = "png",

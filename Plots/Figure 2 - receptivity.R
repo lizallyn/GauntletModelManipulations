@@ -15,7 +15,12 @@ data.x <- data.frame(x = x, Rx = Rx)
 
 receptivity.x <- ggplot(data.x) + 
   geom_line(aes(x = x, y = Rx), linewidth = 1) + 
-  geom_vline(aes(xintercept = naive_x), color = "dodgerblue", linetype = 2, linewidth = 1) + 
+  geom_vline(aes(xintercept = naive_x), color = "dodgerblue1", linetype = 2, linewidth = 1) + 
+  geom_hline(aes(yintercept = m), color = "orchid3", linetype = 2, linewidth = 1) +
+  annotate("text", x = 0.05, y = 0.05, size = 6, color = "dodgerblue1", 
+           label = expression(italic(u)~"= 0.01"), hjust = 0) + 
+  annotate("text", x = 0.8, y = 0.6, size = 6, color = "orchid3", 
+           label = expression("\u03b8 ="~sqrt(1))) + 
   labs(y = "Receptivity (X)", x = "X") +
   theme_classic(base_size = 18) #+ 
   #theme(text = element_text(family = "STIX Two Math"))
@@ -30,13 +35,24 @@ data.y <- data.frame(y = y, Ry = Ry)
 
 receptivity.y <- ggplot(data.y) + 
   geom_line(aes(x = y, y = Ry), linewidth = 1) + 
-  geom_vline(aes(xintercept = naive_y), color = "dodgerblue", linetype = 2, linewidth = 1) + 
+  geom_vline(aes(xintercept = naive_y), color = "dodgerblue1", linetype = 2, linewidth = 1) + 
+  geom_hline(aes(yintercept = m), color = "orchid3", linetype = 2, linewidth = 1) +
+  annotate("text", x = 0.05, y = 0.05, size = 6, color = "dodgerblue1", 
+           label = expression(italic(u)~"= 0"), hjust = 0) + 
+  annotate("text", x = 0.8, y = 0.6, size = 6, color = "orchid3", 
+           label = expression("\u03b8 ="~sqrt(1))) + 
   labs(y = "Receptivity (Y)", x = "Y") +
   theme_classic(base_size = 18) #+ 
   # theme(text = element_text(family = "STIX Two Math"))
+receptivity.y
 
 receptivity_plot <- receptivity.x / receptivity.y
 receptivity_plot
+
 # ggsave(filename = "receptivity_combo_plot_thesis.png",
+#        plot = receptivity_plot, path = "Plots/Plot Outputs",
+#        device = "png", height = 6, width = 10, units = "in")
+
+# ggsave(filename = "receptivity_combo_plot_labeled_lines.png",
 #        plot = receptivity_plot, path = "Plots/Plot Outputs",
 #        device = "png", height = 6, width = 10, units = "in")
