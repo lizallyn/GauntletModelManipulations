@@ -38,8 +38,8 @@ eaten_plot <-
   ylim(c(0, 30)) +
   theme_classic(base_size = 16) + 
   # theme(text = element_text(family = "Candara")) +
-  labs(y = "% Run Consumed", x = "Parameter L", title = "Fear learning rate = (0.01 - 0.3)", color = "Parameter q: \ncatchability")
+  labs(y = "% Run Consumed", x = expression("Fear Learing Rate"~italic("L")), color = "Parameter q: \ncatchability")
 eaten_plot
 
 # ggsave(filename = "fear_sensitivity_q_levels_plot.png", plot = eaten_plot,
-#        device = "png", path = "Paper 1/Plot Outputs", width = 10, height = 4, units = "in")
+#        device = "png", path = "Plots/Plot Outputs", width = 10, height = 4, units = "in")

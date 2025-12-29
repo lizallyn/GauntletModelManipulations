@@ -1,5 +1,3 @@
-
-
 library(reshape2)
 library(paletteer)
 library(ggplot2)
@@ -14,8 +12,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_alpha_salmon_eaten_outpu
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- alpha_range
 
-eaten_plot_alpha <- plotEaten(read.eaten, "Search and capture \nefficiency = (0.1 - 0.8)", c(0, 35), 
-                              0.6, xlab = "\u03b1", as.perc = T)
+eaten_plot_alpha <- plotEaten(read.eaten, c(0, 35), 
+                              0.6, xlab = expression("Search and Capture Efficiency"~italic("\u03b1")), as.perc = T)
 
 # basex
 read.basex <- read.csv("Outputs/Reps_Fear_Manipulations_base_x_list.csv")
@@ -25,8 +23,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_basex_salmon_eaten_outpu
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- base_x_range
 
-eaten_plot_basex <- plotEaten(read.eaten, expression("Baseline X value" == (0 - 0.1)), c(0, 35), 0.01, 
-                              xlab = expression(X[base]), as.perc = T)
+eaten_plot_basex <- plotEaten(read.eaten, c(0, 35), 0.01, 
+                              xlab = expression("Baseline X Value"~italic(X[base])), as.perc = T)
 
 # cmax
 read.cmax <- read.csv("Outputs/Reps_Fear_Manipulations_cmax_list.csv")
@@ -35,8 +33,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_cmax_salmon_eaten_output
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- cmax_range
 
-eaten_plot_cmax <- plotEaten(read.eaten, "Maximum daily \nconsumption = (1 - 10)", c(0, 35), 6, 
-                             xlab = expression("\u03c4"), as.perc = T)
+eaten_plot_cmax <- plotEaten(read.eaten, c(0, 35), 6, 
+                             xlab = expression("Maximum Daily Consumption"~italic("\u03c4")), as.perc = T)
 
 # decay
 read.decay <- read.csv("Outputs/Reps_Fear_Manipulations_decay_list.csv")
@@ -45,8 +43,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_decay_salmon_eaten_outpu
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- decay_range
 
-eaten_plot_decay <- plotEaten(read.eaten, "Foraging learning decay \nrate = (0 - 0.3)", c(0, 35), 0.1, 
-                              xlab = expression("d"), as.perc = T)
+eaten_plot_decay <- plotEaten(read.eaten, c(0, 35), 0.1, 
+                              xlab = expression("Foraging Learning Decay Rate"~italic(d)), as.perc = T)
 
 # prop.spec
 read.prop_spec <- read.csv("Outputs/Reps_Fear_Manipulations_prop_spec_list.csv")
@@ -55,8 +53,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_prop_spec_salmon_eaten_o
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- prop_specialists_range
 
-eaten_plot_propspec <- plotEaten(read.eaten, "Specialist Proportion = (0 - 1)", c(0, 35), 0.3, 
-                                 xlab = expression("%"), as.perc = T)
+eaten_plot_propspec <- plotEaten(read.eaten, c(0, 35), 0.3, 
+                                 xlab = expression("Specialist Proportion %"), as.perc = T)
 
 # rec.height
 read.rec_height <- read.csv("Outputs/Reps_Fear_Manipulations_rec_height_list.csv")
@@ -65,8 +63,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_rec_height_salmon_eaten_
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- rec.height_range
 
-eaten_plot_height <- plotEaten(data = read.eaten, title = "Social receptivity = (0 - 1)", ylims = c(0, 35), nominal = sqrt(0.5), 
-                               xlab = expression("\u03b8"), as.perc = T)
+eaten_plot_height <- plotEaten(data = read.eaten, ylims = c(0, 35), nominal = sqrt(0.5), 
+                               xlab = expression("Social Receptivity"~italic("\u03b8")), as.perc = T)
 
 # rec.width
 read.rec_width <- read.csv("Outputs/Reps_Fear_Manipulations_rec_width_list.csv")
@@ -75,8 +73,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_rec_width_salmon_eaten_o
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- rec.width_range
 
-eaten_plot_width <- plotEaten(read.eaten, "Width of the receptivity \ncurve = (3 - 30)", c(0, 35), 15, 
-                              xlab = expression("z"), as.perc = T)
+eaten_plot_width <- plotEaten(read.eaten, c(0, 35), 15, 
+                              xlab = expression("Width of the Receptivity Curve"~italic("z")), as.perc = T)
 
 # step
 read.step <- read.csv("Outputs/Reps_Fear_Manipulations_step_list.csv")
@@ -86,8 +84,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_step_salmon_eaten_output
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- step_range
 
-eaten_plot_step <- plotEaten(read.eaten, "Forgaing learning \nrate = (0.001 - 0.15)", c(0, 35), 0.05, 
-                             xlab = expression("\u03c3"), as.perc = T)
+eaten_plot_step <- plotEaten(read.eaten, c(0, 35), 0.05, 
+                             xlab = expression("Foraging Learning Rate"~italic("\u03c3")), as.perc = T)
 
 # w
 read.w <- read.csv("Outputs/Reps_Fear_Manipulations_w_list.csv")
@@ -96,8 +94,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_w_salmon_eaten_output.cs
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- w_range
 
-eaten_plot_w <- plotEaten(read.eaten, "Baseline foraging \nsuccess = (100 - 3550)", c(0, 35), 355, 
-                          xlab = expression("w"), as.perc = T)
+eaten_plot_w <- plotEaten(read.eaten, c(0, 35), 355, 
+                          xlab = expression("Baseline Foraging Success"~italic("w")), as.perc = T)
 
 # learn.rate
 read.learn_rate <- read.csv("Outputs/Reps_Fear_Manipulations_learn_rate_list.csv")
@@ -106,8 +104,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_learn_rate_salmon_eaten_
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- learn_rate_range
 
-eaten_plot_L <- plotEaten(read.eaten, "Fear learning rate = (0.01 - 0.3)", c(0, 35), 0.15, 
-                          xlab = expression("L"), as.perc = T)
+eaten_plot_L <- plotEaten(read.eaten, c(0, 35), 0.15, 
+                          xlab = expression("Fear Learning Rate"~italic("L")), as.perc = T)
 
 # rho
 read.rho <- read.csv("Outputs/Reps_Fear_Manipulations_rho_list.csv")
@@ -116,8 +114,8 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_rho_salmon_eaten_output.
 colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- rho_range
 
-eaten_plot_rho <- plotEaten(read.eaten, "Fear learning decay rate = (0 - 0.3)", c(0, 35), 0.05, 
-                            xlab = expression("\u03c1"), as.perc = T)
+eaten_plot_rho <- plotEaten(read.eaten, c(0, 35), 0.05, 
+                            xlab = expression("Fear Learning Decay Rate"~italic("\u03c1")), as.perc = T)
 
 ### composite Plot vuilding
 
@@ -132,7 +130,7 @@ parameter_composite
 #        device = "png",
 #        path = "Plots/Plot Outputs",
 #        width = 10,
-#        height = 13,
+#        height = 12,
 #        units = "in")
 
 

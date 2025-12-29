@@ -24,7 +24,7 @@ eaten_plot_gaps <- #plotEaten(read.eaten, "Days/Week = (1 - 7)", c(0, 4000), NUL
   ylim(c(0, 40)) +
   theme_classic(base_size = 12) + 
   theme(legend.position = "right") +
-  labs(y = "% Run Consumed", x = "Lapse Days", color = "Lapse\nDays")
+  labs(y = "% Run Consumed", x = "Lapse Length in Days", color = "Lapse\nDays")
 eaten_plot_gaps
 
 
@@ -46,7 +46,7 @@ seals_plot_gaps <-
   ylim(0, 75) +
   theme_classic(base_size = 12) +
   theme(legend.position = "none") +
-  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Lapses in Management")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day")
 seals_plot_gaps
 
 # Weekly Effort
@@ -101,7 +101,7 @@ harvest_effort_lapses_plot <- seals_plot_gaps | eaten_plot_gaps
 
 # ggsave(filename = "harvest_effort_lapses_plot.png", device = "png",
 #        path = "Plots/Plot Outputs",
-#        width = 8, height = 5, units = "in",
+#        width = 8, height = 4, units = "in",
 #       plot = harvest_effort_lapses_plot)
 
 # ggsave(filename = "ch1_harvest_effort_comp_plot.png", device = "png",

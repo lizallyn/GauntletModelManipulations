@@ -19,7 +19,7 @@ seals_plot_base <- #plotSeals(seals_for_plot_base, "Base", "cividis", c(0, 85))
   ylim(0, 80) +
   theme_classic(base_size = 18) +
   theme(legend.position = "none") +
-  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "None")
+  labs(y = "Number of Seals at the Gauntlet", x = "Day", title = "Base")
 seals_plot_base
 
 read.seals.nofear <- read.csv("Outputs/Reps_NoFear_Run_During_Low_gauntlet_seals_output.csv")
@@ -78,7 +78,7 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Run_During_Low_salmon_eaten_output.csv
 colnames(read.eaten) <- c("Iteration", "Eaten")
 eaten_fear_during_low <- read.eaten
 
-eaten_all <- data.frame(Iteration = eaten_base$Iteration, None = eaten_base$Eaten,
+eaten_all <- data.frame(Iteration = eaten_base$Iteration, Base = eaten_base$Eaten,
                         Section120 = eaten_nofear_during_low$Eaten, Hunting = eaten_fear_during_low$Eaten)
 eaten_all_long <- melt(eaten_all, id.vars = colnames(eaten_all)[1], variable.name = "Scenario", value.name = "Eaten")
 eaten_all_long$Eaten <- eaten_all_long$Eaten / 10000 * 100
@@ -120,7 +120,7 @@ read.killed <- data.frame(1:ncol(read.killed[,-1:-2]), as.numeric(colSums(read.k
 colnames(read.killed) <- c("Iteration", "Killed")
 killed_fear_during_low <- read.killed
 
-killed_all <- data.frame(Iteration = killed_base$Iteration, None = killed_base$Killed,
+killed_all <- data.frame(Iteration = killed_base$Iteration, Base = killed_base$Killed,
                         Section120 = killed_nofear_during_low$Killed, Hunting = killed_fear_during_low$Killed)
 killed_all_long <- melt(killed_all, id.vars = colnames(killed_all)[1], variable.name = "Scenario", value.name = "Killed")
 

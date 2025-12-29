@@ -1,7 +1,7 @@
 # functionalize plot for total consumed per parameter value
 
 
-plotEaten <- function(data, title = "Parameter Range", ylims, nominal, xlab = NULL, as.perc = F){
+plotEaten <- function(data, ylims, nominal, xlab = NULL, as.perc = F){
   if(as.perc == T){
     data$Eaten <- data$Eaten / 10000 * 100
     ylab = "% Run Consumed"
@@ -14,9 +14,9 @@ plotEaten <- function(data, title = "Parameter Range", ylims, nominal, xlab = NU
     ylim(ylims) +
     theme_classic(base_size = 14) + 
     theme(legend.position = "none" ,
-          axis.title.x = element_text(family = "Candara"),
+          #axis.title.x = element_text(family = "Candara"),
           title = element_text(size = 12)) +
-    labs(y = ylab, x = xlab, title = title)
+    labs(y = ylab, x = xlab)
   return(eaten_plot)
 }
 
