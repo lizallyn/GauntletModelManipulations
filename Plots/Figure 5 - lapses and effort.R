@@ -24,7 +24,7 @@ eaten_plot_gaps <- #plotEaten(read.eaten, "Days/Week = (1 - 7)", c(0, 4000), NUL
   ylim(c(0, 40)) +
   theme_classic(base_size = 12) + 
   theme(legend.position = "right") +
-  labs(y = "% Run Consumed", x = "Lapse Length in Days", color = "Lapse\nDays")
+  labs(y = "% Run Consumed", x = "Lapse Length in Days", color = "Lapse\nLength\n(Days)")
 eaten_plot_gaps
 
 
