@@ -20,7 +20,7 @@ receptivity.x <- ggplot(data.x) +
   annotate("text", x = 0.05, y = 0.05, size = 6, color = "dodgerblue1", 
            label = expression(italic(u)~"= 0.01"), hjust = 0) + 
   annotate("text", x = 0.8, y = 0.6, size = 6, color = "orchid3", 
-           label = expression(italic("\u03b8")~"="~sqrt(1))) + 
+           label = expression(italic("\u03b8")~"="~sqrt(0.5))) + 
   labs(y = "Receptivity (X)", x = "X") +
   theme_classic(base_size = 18) #+ 
   #theme(text = element_text(family = "STIX Two Math"))
@@ -40,7 +40,7 @@ receptivity.y <- ggplot(data.y) +
   annotate("text", x = 0.05, y = 0.05, size = 6, color = "dodgerblue1", 
            label = expression(italic(u)~"= 0"), hjust = 0) + 
   annotate("text", x = 0.8, y = 0.6, size = 6, color = "orchid3", 
-           label = expression("\u03b8 ="~sqrt(1))) + 
+           label = expression("\u03b8 ="~sqrt(0.5))) + 
   labs(y = "Receptivity (Y)", x = "Y") +
   theme_classic(base_size = 18) #+ 
   # theme(text = element_text(family = "STIX Two Math"))
