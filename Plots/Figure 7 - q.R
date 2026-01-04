@@ -1,5 +1,6 @@
 library(ggplot2)
 library(viridis)
+library(ggtext)
 source("Plots/plotEaten.R")
 
 times <- 100
@@ -37,8 +38,9 @@ eaten_plot <-
   scale_color_manual(values = c("#f9b666", "#EA6D20", "#9E3D22")) +
   ylim(c(0, 30)) +
   theme_classic(base_size = 16) + 
-  # theme(text = element_text(family = "Candara")) +
-  labs(y = "% Run Consumed", x = expression("Fear Conditioning Learing Rate"~italic("L")), color = "Parameter q: \ncatchability")
+  theme(legend.title = ggtext::element_markdown(), axis.title.x = ggtext::element_markdown()) +
+  labs(y = "% Run Consumed", x = "Fear Conditioning Learing Rate *L*", 
+       color = "Parameter *q*:<br>catchability")
 eaten_plot
 
 # ggsave(filename = "fear_sensitivity_q_levels_plot.png", plot = eaten_plot,
