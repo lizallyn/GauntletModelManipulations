@@ -48,7 +48,7 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_decay_seals_harvested_ou
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
+                          Value = decay_range)
 killed_plot_decay <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 0.1, 
                                xlab = expression("Foraging Learning Decay Rate"~italic(d)))
 
@@ -59,9 +59,9 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_prop_spec_seals_harveste
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
-killed_plot_decay <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), sqrt(0.5), 
-                                xlab = expression("Social Receptivity"~italic("\u03b8")))
+                          Value = prop_specialists_range)
+killed_plot_propspec <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 0.3, 
+                                xlab = expression("Specialist Proportion %"))
 
 # rec.height
 read.rec_height <- read.csv("Outputs/Reps_Fear_Manipulations_rec_height_list.csv")
@@ -70,11 +70,9 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_rec_height_seals_harvest
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
-killed_plot_decay <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 0.3, 
-                                xlab = expression("Specialist Proportion %"))
-eaten_plot_height <- plotEaten(data = read.eaten, ylims = c(0, max(killed.sums$Killed + 5)), nominal = sqrt(0.5), 
-                               xlab = expression("Social Receptivity"~italic("\u03b8")), as.perc = T)
+                          Value = rec.height_range)
+killed_plot_height <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), sqrt(0.5), 
+                                   xlab = expression("Social Receptivity"~italic("\u03b8")))
 
 # rec.width
 read.rec_width <- read.csv("Outputs/Reps_Fear_Manipulations_rec_width_list.csv")
@@ -83,10 +81,9 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_rec_width_seals_harveste
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
-
-eaten_plot_width <- plotEaten(read.eaten, c(0, max(killed.sums$Killed + 5)), 15, 
-                              xlab = expression("Width of the Receptivity Curve"~italic("z")), as.perc = T)
+                          Value = rec.width_range)
+killed_plot_width <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 15, 
+                                 xlab = expression("Width of the Receptivity Curve"~italic("z")))
 
 # step
 read.step <- read.csv("Outputs/Reps_Fear_Manipulations_step_list.csv")
@@ -96,10 +93,9 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_step_seals_harvested_out
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
-
-eaten_plot_step <- plotEaten(read.eaten, c(0, max(killed.sums$Killed + 5)), 0.05, 
-                             xlab = expression("Foraging Learning Rate"~italic("\u03c3")), as.perc = T)
+                          Value = step_spec_range)
+killed_plot_step <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 0.05, 
+                                xlab = expression("Foraging Learning Rate"~italic("\u03c3")))
 
 # w
 read.w <- read.csv("Outputs/Reps_Fear_Manipulations_w_list.csv")
@@ -108,10 +104,9 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_w_seals_harvested_output
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
-
-eaten_plot_w <- plotEaten(read.eaten, c(0, max(killed.sums$Killed + 5)), 355, 
-                          xlab = expression("Baseline Foraging Success"~italic("w")), as.perc = T)
+                          Value = w_range)
+killed_plot_w <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 355, 
+                               xlab = expression("Baseline Foraging Success"~italic("w")))
 
 # learn.rate
 read.learn_rate <- read.csv("Outputs/Reps_Fear_Manipulations_learn_rate_list.csv")
@@ -120,10 +115,9 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_learn_rate_seals_harvest
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
-
-eaten_plot_L <- plotEaten(read.eaten, c(0, max(killed.sums$Killed + 5)), 0.15, 
-                          xlab = expression("Fear Learning Rate"~italic("L")), as.perc = T)
+                          Value = learn_rate_range)
+killed_plot_L <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 0.15, 
+                            xlab = expression("Fear Learning Rate"~italic("L")))
 
 # rho
 read.rho <- read.csv("Outputs/Reps_Fear_Manipulations_rho_list.csv")
@@ -132,17 +126,16 @@ read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_rho_seals_harvested_outp
 killed <- colSums(read.eaten[3:ncol(read.eaten)])
 killed.sums <- data.frame(Iteration = 1:times,
                           Killed = killed,
-                          Value = cmax_range)
+                          Value = rho_range)
+killed_plot_rho <- plotKilled(killed.sums, c(0, max(killed.sums$Killed + 5)), 0.05, 
+                            xlab = expression("Fear Learning Decay Rate"~italic("\u03c1")))
 
-eaten_plot_rho <- plotEaten(read.eaten, c(0, max(killed.sums$Killed + 5)), 0.05, 
-                            xlab = expression("Fear Learning Decay Rate"~italic("\u03c1")), as.perc = T)
+### composite Plot building
 
-### composite Plot vuilding
-
-parameter_composite <- eaten_plot_propspec + eaten_plot_height + eaten_plot_width + 
-  eaten_plot_basex + eaten_plot_step + eaten_plot_decay +
-  eaten_plot_alpha + eaten_plot_cmax + eaten_plot_w + 
-  eaten_plot_L + eaten_plot_rho +
+parameter_composite <- killed_plot_propspec + killed_plot_height + killed_plot_width + 
+  killed_plot_basex + killed_plot_step + killed_plot_decay +
+  killed_plot_alpha + killed_plot_cmax + killed_plot_w + 
+  killed_plot_L + killed_plot_rho +
   plot_layout(axis_titles = "collect", ncol = 3)
 parameter_composite
 # ggsave(filename = "parameter_eaten_composite_plot.png",
