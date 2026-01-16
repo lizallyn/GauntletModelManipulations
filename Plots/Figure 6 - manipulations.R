@@ -133,5 +133,18 @@ parameter_composite
 #        height = 12,
 #        units = "in")
 
+parameter_composite2 <- eaten_plot_propspec + eaten_plot_height + eaten_plot_width + 
+  eaten_plot_basex + eaten_plot_step + eaten_plot_decay +
+  eaten_plot_alpha + eaten_plot_cmax + eaten_plot_w + 
+  eaten_plot_L + eaten_plot_rho +
+  plot_layout(axis_titles = "collect", ncol = 4)
+# ggsave(filename = "parameter_eaten_composite_plot_horizontal.png",
+#        plot = parameter_composite2,
+#        device = "png",
+#        path = "Plots/Plot Outputs",
+#        width = 12,
+#        height = 10,
+#        units = "in")
+
 
 
