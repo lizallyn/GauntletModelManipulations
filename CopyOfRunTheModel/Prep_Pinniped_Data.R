@@ -107,7 +107,8 @@ if(bounds == "Low Consumption"){
   Cmax_mat <- ceiling(low_mat) # whole fish have to die
 }
 
-gamma <- -1 # pred dep, this expects something between -1, 0
+# changed gamma to 0 on 4/27/2026
+gamma <- 0 # pred dep, this expects something between -1, 0
 Y <- 0 # always 0 for this.
 
 error_msg <- "Error in pinniped accounting! They cannot count and neither can you!"
