@@ -76,10 +76,10 @@ for(rep in 1:times){
   seals_harvested_reps <- cbind(seals_harvested_reps, H)
 }
 
-write.csv(salmon_eaten_reps, "ParameterManipulations/Outputs/Reps_Base_Run_salmon_eaten_output.csv")
-write.csv(salmon_escaped_reps, "ParameterManipulations/Outputs/Reps_Base_Run_salmon_escaped_output.csv")
-write.csv(salmon_list_reps, "ParameterManipulations/Outputs/Reps_Base_Run_gauntlet_salmon_output.csv")
-write.csv(salmon_consumed_pv_reps, "ParameterManipulations/Outputs/Reps_Base_Run_consumed_per_output.csv")
-write.csv(gauntlet_seals_reps, "ParameterManipulations/Outputs/Reps_Base_Run_gauntlet_seals_output.csv")
-write.csv(seal_prob_gauntlet_reps,"ParameterManipulations/Outputs/Reps_Base_Run_prob_gauntlet_output.csv")
-write.csv(seals_harvested_reps, "ParameterManipulations/Outputs/Reps_Base_Run_seals_harvested_output.csv")
+write.csv(salmon_eaten_reps, "Outputs/Reps_Base_Run_salmon_eaten_output.csv")
+write.csv(salmon_escaped_reps, "Outputs/Reps_Base_Run_salmon_escaped_output.csv")
+write.csv(salmon_list_reps, "Outputs/Reps_Base_Run_gauntlet_salmon_output.csv")
+write.csv(salmon_consumed_pv_reps, "Outputs/Reps_Base_Run_consumed_per_output.csv")
+write.csv(gauntlet_seals_reps, "Outputs/Reps_Base_Run_gauntlet_seals_output.csv")
+write.csv(seal_prob_gauntlet_reps,"Outputs/Reps_Base_Run_prob_gauntlet_output.csv")
+write.csv(seals_harvested_reps, "Outputs/Reps_Base_Run_seals_harvested_output.csv")
