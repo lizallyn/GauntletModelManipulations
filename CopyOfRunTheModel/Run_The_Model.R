@@ -10,12 +10,12 @@ rep <- 1
 ## Run it Manually
 
   
-# case.study <- "Base"
-# run_count <- 1
+case.study <- "Base"
+run_count <- 1
 # case.study <- "N1"
 # chum_fishery <- FALSE
-case.study <- "B1"
-temps <- "Boring"
+# case.study <- "B1"
+# temps <- "Boring"
 # temps <- "Hot!"
 
 # bounds <- "Made-Up"
@@ -57,7 +57,7 @@ source("Functions/hauloutReduction.R")
 source("CopyOfRunTheModel/set_pars.R")
 
 # 05 Initialize Variables
-source("CopyOfRunTheModel/initialize_variables_B.R")
+source("CopyOfRunTheModel/initialize_variables.R")
 
 # 06 Loop Functions
 source("CopyOfRunTheModel/loadLoopFunctions.R")

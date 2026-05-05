@@ -2,7 +2,7 @@
 library(ggplot2)
 
 
-read.arrival <- read.csv("Outputs/Reps_Base_Run_salmon_arrival_output.csv")
+read.arrival <- read.csv("Outputs_Gamma_-1/Reps_Base_Run_salmon_arrival_output.csv")
 
 Ch1_arrival_plot <- ggplot(data = read.arrival) +
   geom_line(aes(x = Day - 49, y = Run1), linewidth = 1.5) +

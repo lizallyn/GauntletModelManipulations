@@ -91,11 +91,11 @@ for(rep in 1:times){
   
 }
 
-write.csv(salmon_eaten_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_salmon_eaten_output.csv")
-write.csv(salmon_escaped_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_salmon_escaped_output.csv")
-write.csv(salmon_list_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_gauntlet_salmon_output.csv")
-write.csv(salmon_consumed_pv_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_consumed_per_output.csv")
-write.csv(gauntlet_seals_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_gauntlet_seals_output.csv")
-write.csv(seal_prob_gauntlet_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_prob_gauntlet_output.csv")
-write.csv(seals_harvested_reps, "ParameterManipulations/Outputs/Reps_Fear_Run_During_Low_seals_harvested_output.csv")
+write.csv(salmon_eaten_reps, "Outputs/Reps_Fear_Run_During_Low_salmon_eaten_output.csv")
+write.csv(salmon_escaped_reps, "Outputs/Reps_Fear_Run_During_Low_salmon_escaped_output.csv")
+write.csv(salmon_list_reps, "Outputs/Reps_Fear_Run_During_Low_gauntlet_salmon_output.csv")
+write.csv(salmon_consumed_pv_reps, "Outputs/Reps_Fear_Run_During_Low_consumed_per_output.csv")
+write.csv(gauntlet_seals_reps, "Outputs/Reps_Fear_Run_During_Low_gauntlet_seals_output.csv")
+write.csv(seal_prob_gauntlet_reps, "Outputs/Reps_Fear_Run_During_Low_prob_gauntlet_output.csv")
+write.csv(seals_harvested_reps, "Outputs/Reps_Fear_Run_During_Low_seals_harvested_output.csv")
 
