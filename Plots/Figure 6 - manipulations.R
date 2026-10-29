@@ -46,6 +46,16 @@ read.eaten$Value <- decay_range
 eaten_plot_decay <- plotEaten(read.eaten, c(0, 35), 0.1, 
                               xlab = expression("Foraging Learning Decay Rate"~italic(d)), as.perc = T)
 
+# gamma (not tested yet Oct 2026)
+read.gamma <- read.csv("Outputs/Reps_Fear_Manipulations_gamma_list.csv")
+gamma_range <- read.gamma$gamma
+read.eaten <- read.csv("Outputs/Reps_Fear_Manipulations_gamma_salmon_eaten_output.csv")
+colnames(read.eaten) <- c("Iteration", "Eaten")
+read.eaten$Value <- gamma_range
+
+eaten_plot_gamma <- plotEaten(read.eaten, c(0, 35), 0, 
+                              xlab = expression("Predator Dependence"~italic("\u03b3")), as.perc = T)
+
 # prop.spec
 read.prop_spec <- read.csv("Outputs/Reps_Fear_Manipulations_prop_spec_list.csv")
 prop_specialists_range <- read.prop_spec$prop_spec
@@ -136,7 +146,7 @@ parameter_composite
 parameter_composite2 <- eaten_plot_propspec + eaten_plot_height + eaten_plot_width + 
   eaten_plot_basex + eaten_plot_step + eaten_plot_decay +
   eaten_plot_alpha + eaten_plot_cmax + eaten_plot_w + 
-  eaten_plot_L + eaten_plot_rho +
+  eaten_plot_gamma + eaten_plot_L + eaten_plot_rho +
   plot_layout(axis_titles = "collect", ncol = 4)
 # ggsave(filename = "parameter_eaten_composite_plot_horizontal.png",
 #        plot = parameter_composite2,
