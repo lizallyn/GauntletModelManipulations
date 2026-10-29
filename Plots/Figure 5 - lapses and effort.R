@@ -18,9 +18,8 @@ read.eaten$perc.Eaten <- read.eaten$Eaten / 10000 * 100
 
 eaten_plot_gaps <- #plotEaten(read.eaten, "Days/Week = (1 - 7)", c(0, 4000), NULL)
   ggplot(data = read.eaten) + 
-  geom_point(aes(x = Value, y = perc.Eaten, 
-             color = Value), size = 1.5) +
-  scale_color_viridis(discrete = F, option = "turbo") +
+  geom_point(aes(x = Value, y = perc.Eaten), color = "black", size = 1.5) +
+  # scale_color_viridis(discrete = F, option = "turbo") +
   ylim(c(0, 40)) +
   theme_classic(base_size = 12) + 
   theme(legend.position = "right") +
