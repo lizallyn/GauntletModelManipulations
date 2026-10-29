@@ -1,7 +1,7 @@
  # added Oct 2026
 library(dplyr)
 
-times <- 100
+times <- 10
 salmon_eaten_reps <- rep(NA, times)
 salmon_escaped_reps <- rep(NA, times)
 salmon_list_reps <- data.frame(NA)
@@ -12,7 +12,7 @@ seals_harvested_reps <- data.frame(NA)
 
 ## Parameter Manipulation Ranges
 gamma_range <- runif(min = -1, max = 0, n = times)
-save_gamma <- tibble(Iteration = 1:times, Gamma = gamma_range)
+save_gamma <- tibble(Iteration = 1:times, gamma = gamma_range)
 
 for(rep in 1:times){
   case.study <- "Base"
