@@ -1,4 +1,4 @@
-# run the loop 100 times on base settings and take a look
+# running with 1000 reps Nov 2026
 
 times <- 1000
 salmon_eaten_reps <- rep(NA, times)

@@ -1,4 +1,4 @@
-# run the loop 100 times on base settings and take a look
+# run the loop 1000 times Nov 2026
 # Boat During Fear
 
 
