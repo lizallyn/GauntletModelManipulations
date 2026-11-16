@@ -2,7 +2,7 @@
 # Boat During Fear
 
 
-times <- 10
+times <- 1000
 salmon_eaten_reps <- rep(NA, times)
 salmon_escaped_reps <- rep(NA, times)
 salmon_list_reps <- data.frame(NA)
