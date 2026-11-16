@@ -1,6 +1,6 @@
 # running with 1000 reps Nov 2026
 
-times <- 1000
+times <- 500
 salmon_eaten_reps <- rep(NA, times)
 salmon_escaped_reps <- rep(NA, times)
 salmon_list_reps <- data.frame(NA)
