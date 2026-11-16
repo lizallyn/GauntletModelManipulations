@@ -2,7 +2,7 @@ library(reshape2)
 library(paletteer)
 library(ggplot2)
 library(patchwork)
-times <- 100
+times <- 10
 
 ## Seals Comp Line Plots
 read.seals.base <- read.csv("Outputs/Reps_Base_Run_gauntlet_seals_output.csv")

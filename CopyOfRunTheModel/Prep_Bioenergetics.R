@@ -3,12 +3,14 @@
 
 #### Parameter Cmax ####
 # see Obsidian note "Parameter - Cmax"
-# energy estimates from Oneill 2014
+# pinniped daily energy needs
+
 Pv_kcal <- 3550
 Zc_kcal <- 22803
 Ej_kcal <- 35851
 pinn_kcal <- data.frame(Pv = Pv_kcal, Zc = Zc_kcal, Ej = Ej_kcal)
 
+# salmon caloric content estimates from Oneill 2014
 chinookGR_kcal <- 7304
 chinookLN_kcal <- 12403
 chinookB_kcal <- 8428
@@ -116,5 +118,6 @@ alpha_all <- rbind(alpha_csv["Chinook",],
 rownames(alpha_all) <- c("ChinookGR", "ChinookLN", "ChinookB", "Chinook", 
                                "Chum", "Coho", "CohoB", "Sockeye", "Base")
 alpha_all["ChinookLN",] <- alpha_all["ChinookGR",]/1.5
+# because LocNis are big and strong and hard to catch for everybody probably
 
 
