@@ -50,9 +50,9 @@ seals_plot_gaps <-
   labs(y = "Number of Seals at the Gauntlet", x = "Day")
 seals_plot_gaps
 
-# ggsave(filename = "harvest_effort_lapses_plot.png", device = "png",
-#        path = "Plots/Plot Outputs",
-#        width = 8, height = 4, units = "in",
-#       plot = harvest_effort_lapses_plot)
+ggsave(filename = "harvest_effort_lapses_plot_G-1.A0.6.png", device = "png",
+       path = "Plots/Plot Outputs",
+       width = 8, height = 4, units = "in",
+      plot = harvest_effort_lapses_plot)
 
 
