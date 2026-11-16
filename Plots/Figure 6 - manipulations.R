@@ -3,7 +3,7 @@ library(paletteer)
 library(ggplot2)
 library(patchwork)
 source("Plots/plotEaten.R")
-times <- 100
+times <- 10
 
 # alpha
 read.alpha <- read.csv("Outputs/Reps_Fear_Manipulations_alpha_list.csv")
