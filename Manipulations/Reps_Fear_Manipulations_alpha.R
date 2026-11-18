@@ -1,7 +1,7 @@
  # run the loop 100 times on base settings and take a look
 library(dplyr)
 
-times <- 1000
+times <- 500
 salmon_eaten_reps <- rep(NA, times)
 salmon_escaped_reps <- rep(NA, times)
 salmon_list_reps <- data.frame(NA)
@@ -11,7 +11,7 @@ gauntlet_seals_reps <- data.frame(NA)
 seals_harvested_reps <- data.frame(NA)
 
 ## Parameter Manipulation Ranges
-alpha_range <- runif(min = 0.1, max = 0.8, n = times)
+alpha_range <- runif(min = 0.05, max = 0.8, n = times)
 save_alpha <- tibble(Iteration = 1:times, Alpha = alpha_range)
 
 for(rep in 1:times){
