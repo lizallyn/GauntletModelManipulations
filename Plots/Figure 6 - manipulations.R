@@ -13,7 +13,7 @@ colnames(read.eaten) <- c("Iteration", "Eaten")
 read.eaten$Value <- alpha_range
 
 eaten_plot_alpha <- plotEaten(read.eaten, c(0, 35), 
-                              0.6, xlab = expression("Search and Capture Efficiency"~italic("\u03b1")), as.perc = T)
+                              0.3, xlab = expression("Search and Capture Efficiency"~italic("\u03b1")), as.perc = T)
 
 # basex
 read.basex <- read.csv("Outputs/Reps_Fear_Manipulations_base_x_list.csv")
