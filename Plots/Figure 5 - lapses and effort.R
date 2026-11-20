@@ -6,7 +6,7 @@ library(ggplot2)
 library(patchwork)
 library(viridis)
 
-times <- 100
+times <- 500
 
 # Gaps Lapses
 read.gaps <- read.csv("Outputs/Reps_Fear_Effort_Lapses_range_gap.csv")
@@ -50,9 +50,9 @@ seals_plot_gaps <-
   labs(y = "Number of Seals at the Gauntlet", x = "Day")
 seals_plot_gaps
 
-ggsave(filename = "harvest_effort_lapses_plot_G-1.A0.6.png", device = "png",
-       path = "Plots/Plot Outputs",
-       width = 8, height = 4, units = "in",
-      plot = harvest_effort_lapses_plot)
+# ggsave(filename = "harvest_effort_lapses_plot_G-1.A0.6.png", device = "png",
+#        path = "Plots/Plot Outputs",
+#        width = 8, height = 4, units = "in",
+#       plot = harvest_effort_lapses_plot)
 
 

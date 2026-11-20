@@ -1,6 +1,6 @@
 
 
-times <- 100
+times <- 500
 salmon_eaten_reps <- rep(NA, times)
 salmon_escaped_reps <- rep(NA, times)
 salmon_list_reps <- data.frame(NA)
@@ -94,12 +94,12 @@ for(rep in 1:times){
   
 }
 
-write.csv(range_gap, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_range_gap.csv")
-write.csv(salmon_eaten_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_salmon_eaten_output.csv")
-write.csv(salmon_escaped_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_salmon_escaped_output.csv")
-write.csv(salmon_list_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_gauntlet_salmon_output.csv")
-write.csv(salmon_consumed_pv_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_consumed_per_output.csv")
-write.csv(gauntlet_seals_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_gauntlet_seals_output.csv")
-write.csv(seal_prob_gauntlet_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_prob_gauntlet_output.csv")
-write.csv(seals_harvested_reps, "ParameterManipulations/Outputs/Reps_Fear_Effort_Lapses_seals_harvested_output.csv")
+write.csv(range_gap, "Outputs/Reps_Fear_Effort_Lapses_range_gap.csv")
+write.csv(salmon_eaten_reps, "Outputs/Reps_Fear_Effort_Lapses_salmon_eaten_output.csv")
+write.csv(salmon_escaped_reps, "Outputs/Reps_Fear_Effort_Lapses_salmon_escaped_output.csv")
+write.csv(salmon_list_reps, "Outputs/Reps_Fear_Effort_Lapses_gauntlet_salmon_output.csv")
+write.csv(salmon_consumed_pv_reps, "Outputs/Reps_Fear_Effort_Lapses_consumed_per_output.csv")
+write.csv(gauntlet_seals_reps, "Outputs/Reps_Fear_Effort_Lapses_gauntlet_seals_output.csv")
+write.csv(seal_prob_gauntlet_reps, "Outputs/Reps_Fear_Effort_Lapses_prob_gauntlet_output.csv")
+write.csv(seals_harvested_reps, "Outputs/Reps_Fear_Effort_Lapses_seals_harvested_output.csv")
 
