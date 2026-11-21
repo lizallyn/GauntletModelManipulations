@@ -145,7 +145,7 @@ ch1_harvest_seals_and_salmon_comp_plot <- (seals_plot_base / seals_plot_nofear_d
     plot_layout(axis_titles = "collect"))
 
 ch1_harvest_seals_and_salmon_comp_plot
-# ggsave(filename = "harvest_scenarios_comparison_gauntletseals_salmon_harvestedseals_plot2_G-1.A0.6.png", device = "png",
+# ggsave(filename = "harvest_scenarios_comparison_gauntletseals_salmon_harvestedseals_plot2_G-1.A0.3.png", device = "png",
 #        path = "Plots/Plot Outputs",
 #        width = 10, height = 8, units = "in",
 #       plot = ch1_harvest_seals_and_salmon_comp_plot)
