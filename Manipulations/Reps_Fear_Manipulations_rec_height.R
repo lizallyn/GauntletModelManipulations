@@ -1,7 +1,7 @@
-# run the loop 100 times on base settings and take a look
+# run the loop 500
 
 
-times <- 100
+times <- 500
 salmon_eaten_reps <- rep(NA, times)
 salmon_escaped_reps <- rep(NA, times)
 salmon_list_reps <- data.frame(NA)
@@ -93,14 +93,14 @@ for(rep in 1:times){
   seals_harvested_reps <- cbind(seals_harvested_reps, H)
 }
 
-write.csv(save_rec_height_fear, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_list.csv")
-write.csv(salmon_eaten_reps, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_salmon_eaten_output.csv")
-write.csv(salmon_escaped_reps, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_salmon_escaped_output.csv")
-write.csv(salmon_list_reps, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_gauntlet_salmon_output.csv")
-write.csv(salmon_consumed_pv_reps, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_consumed_per_output.csv")
-write.csv(gauntlet_seals_reps, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_gauntlet_seals_output.csv")
-write.csv(seal_prob_gauntlet_reps,"ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_prob_gauntlet_output.csv")
-write.csv(seals_harvested_reps, "ParameterManipulations/Outputs/Reps_Fear_Manipulations_rec_height_seals_harvested_output.csv")
+write.csv(save_rec_height_fear, "Outputs/Reps_Fear_Manipulations_rec_height_list.csv")
+write.csv(salmon_eaten_reps, "Outputs/Reps_Fear_Manipulations_rec_height_salmon_eaten_output.csv")
+write.csv(salmon_escaped_reps, "Outputs/Reps_Fear_Manipulations_rec_height_salmon_escaped_output.csv")
+write.csv(salmon_list_reps, "Outputs/Reps_Fear_Manipulations_rec_height_gauntlet_salmon_output.csv")
+write.csv(salmon_consumed_pv_reps, "Outputs/Reps_Fear_Manipulations_rec_height_consumed_per_output.csv")
+write.csv(gauntlet_seals_reps, "Outputs/Reps_Fear_Manipulations_rec_height_gauntlet_seals_output.csv")
+write.csv(seal_prob_gauntlet_reps,"Outputs/Reps_Fear_Manipulations_rec_height_prob_gauntlet_output.csv")
+write.csv(seals_harvested_reps, "Outputs/Reps_Fear_Manipulations_rec_height_seals_harvested_output.csv")
 
 # For interpreting reps outputs
 
