@@ -61,7 +61,19 @@ for(rep in 1:times){
   source("CopyOfRunTheModel/loadLoopFunctions.R")
   
   # 07 Run The Loop
-  source("ParameterManipulations/runLoop.R")
+  if(no_seals == F && no_zc == F && no_ej == F){
+    source("Functions/rungeKutta_3.R")
+    source("CopyOfRunTheModel/The_Loop_all.R")
+    source("Functions/Plots_Ej.R")
+    source("Functions/Plots_Zc.R")
+  } else if(no_seals == F && no_zc == F && no_ej == T){
+    source("Functions/rungeKutta_2.R")
+    source("CopyOfRunTheModel/The_Loop_pv_zc.R")
+    source("Functions/Plots_Zc.R")
+  } else if(no_seals == F && no_zc == T && no_ej == T){
+    source("Functions/rungeKutta.R")
+    source("CopyOfRunTheModel/The_Loop_pv.R")
+  } else {print(error_msg)}
   
   # 08 Plots
   source("Functions/Plots_Pv.R")
